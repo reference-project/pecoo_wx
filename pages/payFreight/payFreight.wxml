@@ -1,0 +1,50 @@
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+</loading>
+<loading hidden="{{paybtn}}">
+  获取支付数据...
+</loading>
+<view style="overflow: hidden;" wx:if="{{hidden}}">
+  <view style="border-top: 1rpx solid #E2E2E2">
+    <auction-order disable="true" goodsId="{{curOrderDetail.goodsId}}" pic="{{curOrderDetail.thumbnailUrl}}" goodsName="{{curOrderDetail.goodsName}}" priceUnit="{{curOrderDetail.priceUnit}}" clientPrice="{{curOrderDetail.clientPrice}}" transPrice="{{curOrderDetail.transPrice}}"></auction-order>
+  </view>
+  <view class="pay-money-box">
+    <view class="total-price">
+      <text>支付总价</text>
+      <text>{{curOrderDetail.priceUnit}}{{curOrderDetail.totalFreight}}(¥{{curOrderDetail.realMoney}})</text>
+    </view>
+    <view class="balance">
+      <view>
+        <text>可用余额</text>
+        <text class="theme-col">(¥{{curOrderDetail.usedMoney}})</text>
+      </view>
+      <view wx:if="{{fareMoney > 0}}">-¥{{fareMoney}}</view>      
+      <image class="checked-pic" wx:if="{{balancePay}}" src="{{baseImg}}common/checked.png" bindtap="changeBalancePay"></image>      
+      <image class="checked-pic" wx:else src="{{baseImg}}common/no_checked.png" bindtap="changeBalancePay"></image>
+    </view>
+    <view class="end-price">
+      <text style="color: #999999;">订单￥{{curOrderDetail.realMoney}}  可抵金额￥{{fareMoney}}</text>
+      <text>待支付：<text class="theme-col">¥{{payMoney}}</text></text>
+    </view>
+  </view>
+  <view class="payment">
+    <view style="padding: 0 30rpx;">
+      <text>支付方式:</text>
+      <navigator style="color: #999999" url="/pages/limitState/limitState">限额说明</navigator>
+    </view>
+    <view class="wx-box {{disable? 'transparency' : ''}}">
+      <view style="display: flex;">
+        <image class="wx-pic" src="{{baseImg}}common/wx.png"></image>
+        <text style="padding-left: 10rpx;margin-top: 12rpx;">微信</text>
+      </view>
+      <!-- <image class="checked-pic" wx:if="{{!wxPay}}" src="{{baseImg}}common/no_checked.png" bindtap="changeWxPay"></image> -->
+      <image class="checked-pic" src="{{baseImg}}common/checked.png" bindtap="changeWxPay"></image>
+    </view>
+  </view>
+  <!-- 底部 -->
+  <view class="order-bottom">
+    <view>待支付:<text class="theme-col">¥{{payMoney}}</text></view>|
+    <view style="color: #999999">抵付:<text>¥{{fareMoney}}</text></view>
+    <view class="pay" bindtap="pay">支付</view>
+  </view>
+</view>

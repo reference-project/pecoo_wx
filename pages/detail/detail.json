@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "拍品详情",
+  "usingComponents": {
+    "auction-list": "/components/auctionList/auctionList"
+  }
+}

@@ -1,0 +1,78 @@
+page{
+	background: #F3F3F3;
+}
+.rechargediv1{
+	background: #FFFFFF;
+	margin-bottom: 10px;
+	padding: 0 10px;
+}
+.rechargediv1>view{
+	height: 44px;
+	line-height: 44px;
+	color: #333333;
+	font-size: 14px;
+	border-bottom: 1px solid #F3F3F3;
+}
+.rechargediv1 radio{
+	float: right;
+	width: 16px;
+	height: 16px;
+}
+.rechargediv1>view:last-child{
+	border: none;
+}
+.recharge-money{
+	height: 44px;
+	line-height: 44px; 
+	background: #FFFFFF;
+	padding: 0 10px;
+	font-size: 14px;
+  display: -webkit-box;
+}
+.recharge-money input{
+  display: block;
+  -webkit-box-flex: 1;
+  margin-top: 10px;
+  text-align: right;
+}
+.recharge-money text{
+  display: inline-block;
+  width: 80px;
+}
+.pay{
+	margin-top: 10px;
+	background: #FFFFFF;
+	padding: 0 10px;
+	line-height: 44px;
+	font-size: 14px;
+}
+.pay>view{ 
+	height: 44px;
+	border-bottom: 1px solid #F3F3F3;
+}
+.payment{
+  display: flex;
+}
+.pay image{
+	width: 30px;
+  height: 30px;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.pay radio{
+	width: 18px;
+	height: 18px;
+  display: inline-block;
+  float: right;
+}
+.confirm{
+	width: 90%;
+	height: 45px;
+	text-align: center;
+	line-height: 45px;
+	color: #FFFFFF;
+	font-size: 16px;
+	background: #1A191E;
+	margin: 20px auto;
+	margin-top: 60px;
+}

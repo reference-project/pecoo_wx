@@ -1,0 +1,48 @@
+<div class="referrerUl2">
+  <!--推荐记录-->
+  <ul class="orderUl2" id="shareUl" style="margin-top: 0;">
+    <li>
+      <div>
+        <p class="orderTime">
+          订单号：<span>{{OrderDetail.orderNo}}</span>
+        </p>
+        <p class="orderResult">
+          {{OrderDetail.orderStateMc}}
+        </p>
+      </div>
+      <navigator url="/pages/detail/detail?goodId={{OrderDetail.goodsId}}" class="orderA">
+        <div class="orderADiv1">
+          <image src="{{OrderDetail.goodsPic}}" mode='aspectFit'/>
+        </div>
+        <div class="orderADiv2">
+          <p class="orderADiv2Lot">{{OrderDetail.goodsName}}</p>
+          <p class="orderADiv2Lot">我的报价：{{OrderDetail.moneyUnit}}{{OrderDetail.clientPrice}}</p>
+					<p>开拍时间：<span>{{OrderDetail.startTime}}</span></p>
+					<p class="myBid">开拍地点：<span>{{OrderDetail.address}}</span></p>
+        </div>
+      </navigator>
+      <p>联系方式：<span>{{OrderDetail.receiveTel}}</span></p>
+    </li>
+  </ul>
+  <div class="referrerDet">
+    <ul>
+      <li>
+        落槌价<span wx:if='{{OrderDetail.goodsAmount == "-"}}'>{{OrderDetail.goodsAmount}}</span>
+        <span wx:if='{{OrderDetail.goodsAmount != "-"}}'>{{OrderDetail.moneyUnit}}{{OrderDetail.goodsAmount}}</span>
+      </li>
+      <li>
+        货款金额 ({{OrderDetail.auctionStateMc}})<span>￥{{OrderDetail.goodsAmountTotalRmb}}</span>
+      </li>
+      <li>
+        运费 ({{OrderDetail.freightStateMc}})<span>￥{{OrderDetail.totalFreightRmb}}</span>
+      </li>
+    </ul>
+    <p>总金额<span>￥{{OrderDetail.totalRmb}}</span></p>
+  </div>
+  <div class="referrerTime">
+    <p wx:if="{{OrderDetail.paySucTime}}">货款支付时间：{{OrderDetail.paySucTime}}</p>
+    <p wx:if="{{!OrderDetail.paySucTime}}">货款支付时间：-</p>
+    <p wx:if="{{OrderDetail.freightSucTime}}">运费支付时间：{{OrderDetail.freightSucTime}}</p>
+    <p wx:if="{{!OrderDetail.freightSucTime}}">运费支付时间：-</p>
+  </div>
+</div>

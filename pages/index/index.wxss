@@ -1,0 +1,219 @@
+/**index.wxss**/
+page{
+  background: #ffffff;
+  height: 100%;
+}
+/* 头部搜索 */
+.home-head{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 300;
+  top: 10rpx;
+}
+.add-bg-color{
+  background: #FFFFFF;
+  margin-top: -10rpx;
+  padding-bottom: 10rpx;
+}
+.colors{
+  background: #F8F8F8 !important;
+  opacity: 1 !important;
+}
+.head-icon{
+  width: 44rpx;
+  height: 44rpx;
+  margin: 0 30rpx;
+  z-index: 300;
+}
+.search-icon{
+  position: absolute;
+  width: 44rpx;
+  height: 44rpx;
+  left: 50rpx;
+  top: 10rpx;
+  z-index: 300;
+}
+.search-words{
+  font-family: 'PingFang-SC-Regular';
+  flex: 1;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1rpx solid #EEEEEE;
+  background: #F8F8F8;
+  font-size: 14px;
+  color: #999999;
+  background: #FFFFFF;
+  opacity: .5;
+  padding-left: 70rpx;
+  margin-left: 30rpx;
+  border-radius: 4px;
+}
+.swiper{
+  width: 100%;
+}
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+.spot{
+  position: absolute;
+  right: 30rpx;
+  border: 4px solid #A63533;
+  border-radius: 50%;
+  top: 10rpx;
+  background:#E83E3E;
+}
+.auction-area{
+  width: 100%;
+  height: 580rpx;
+}
+.public{
+  padding-left: 30rpx;
+}
+.public-name{
+  height: 120rpx;
+  font-family: 'PingFang-SC-Medium';
+  color: #333333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.arrow{
+  width: 12rpx;
+  height: 22rpx;
+  margin-right: 30rpx;
+}
+.auction-content{
+  min-height: 450rpx;
+}
+.auction-content view{
+  width: 30%;
+  float: left;
+  margin: 0 3% 3% 0;
+  height: 210rpx;
+  font-size: 15px;
+  color: #FFFFFF;
+  text-align: center;
+  border-radius: 10rpx;
+  line-height: 210rpx;
+  background-size: cover;
+}
+.new-pro{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+}
+.new-pro-box{
+  width: 100%;
+  margin-top: 20rpx;
+  height: 252rpx;
+  display: flex;
+  margin-right: 30rpx;
+  position: relative;  
+}
+.item-new-pro{
+  width: 100%;
+  height: 220rpx; 
+  display: flex;
+  border-radius: 10px;
+  position: absolute;
+  background: #FFFFFF;
+  box-shadow:1px 1px 1px 2px rgba(0,0,0,0.1);
+}
+.new-pro-pic{
+  min-width: 170rpx;
+  height: 170rpx;
+  background: #F5F5F5;
+  margin: 25rpx 22rpx;
+}
+.new-pro-pic image{
+  width: 100%;
+  height: 100%;
+}
+.new-pro-cont{
+  flex: 1;
+}
+.hot{
+  width: 150rpx;
+  height: 137rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.hot image{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.new-pro-name{
+  margin-top: 30rpx;
+  font-family: 'Arial';
+  color: #333333;
+  padding-right: 120rpx;
+  font-size: 16px;
+  height: 70rpx;
+}
+.new-pro-address{
+  min-width: 250rpx;
+  padding-right: 133rpx;
+  color: #999999;
+  font-size: 12px;
+  font-family: 'ArialMT';
+  padding-top: 20rpx;
+}
+.new-pro-time{
+  display: flex;
+  align-items: center;
+  color: #E83E3E;
+  font-size: 12px;
+  padding-top: 20rpx;
+}
+.new-pro-time image{
+  width: 22rpx;
+  height: 27rpx;
+  margin-right: 10rpx;
+}
+/* 今日推荐 */
+.today-content{
+  width: 100%;
+}
+/* 猜你喜欢 */
+.like-list-box{
+  height: 400rpx;
+  width: 100%;
+  white-space: nowrap;
+  margin-left: 30rpx;
+}
+.item-like-list{
+  display: inline-block;
+  width: 240rpx;
+  margin-right: 20rpx;
+}
+.item-like-list-pic{
+  width: 220rpx;
+  height: 220rpx;
+  padding: 10rpx;
+  border-radius:6rpx;  
+  background: #dddddd;
+}
+.item-like-list-pic image{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.item-like-list-name{
+  font-family: 'PingFang-SC-Medium';
+  color: #333333;
+  font-size: 14px;
+  padding-top: 10rpx;
+}
+.item-like-list-price{
+  font-family: 'PingFang SC';
+  color: #333333;
+  font-size: 12px;
+  padding-top: 15rpx;
+}

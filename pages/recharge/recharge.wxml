@@ -1,0 +1,19 @@
+<!--充值-->
+<view>
+  <radio-group class="radio-group rechargediv1"  bindchange="radioChange">
+    <view type="1">余额<radio name="rechargeType" color="#D74A42" checked="{{rechargeOrder == '01' ? 'checked' : '' }}" value="01"/></view>
+    <view type="2">保证金<radio name="rechargeType" color="#D74A42" checked="{{rechargeOrder == '02' ? 'checked' : '' }}" value="02"/></view>
+  </radio-group>
+</view>
+<view class="recharge-money">
+  <text>充值金额：</text>
+  <input type="digit" bindinput='rechargeInput' placeholder="充值金额不高于500,00元"/>
+</view>
+<view class="pay">
+  <view>支付方式</view>
+  <view> 
+    <image src="{{baseImg}}common/wx.png"/>微信支付
+    <radio name="rechargeWay" checked="checked" color="#D74A42" id="payWei" value="03"/>
+  </view>
+</view>
+<view class='confirm' bindtap='submitOrder'>确定</view>

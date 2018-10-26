@@ -1,0 +1,9 @@
+.argeement{
+  margin: 0 52rpx 0 41rpx;
+  font-family: 'PingFang-SC-Medium';
+  font-size: 14px;
+  color: #666666;
+}
+.argeement view{
+  line-height: 2;
+}

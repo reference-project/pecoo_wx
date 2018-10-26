@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "拍库",
+  "usingComponents": {
+    "waterfall-flow": "/components/waterfallFlow/waterfallFlow"
+  }
+}

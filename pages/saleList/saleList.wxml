@@ -1,0 +1,42 @@
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+</loading>
+<view class="none">
+  <image wx:for="{{goodsList}}" wx:for-index="index" data-index="{{index}}" wx:key="{{item.id}}" src="{{item.thumbnailUrl}}" bindload="loadImage"></image>
+</view>
+<view wx:if="{{hidden}}" class="overflow">
+  <view class="meetingplace">
+    <view class="pic-box">
+      <image class="item-pic" mode="aspectFit" src="{{auctionHouse.auctionThumPic || baseImg+'common/default_small.png'}}"></image>
+    </view>
+    <view class="item-name warp">{{auctionHouse.name}}</view>
+    <view class="public start-time">开拍时间:{{auctionHouse.startTime}}</view>
+    <view class="public address">竞拍地点:{{auctionHouse.address}}</view>
+    <image src="{{baseImg}}detail/collection.png" wx:if="{{auctionHouse.isCol == 'N'}}" class="collection" mode="aspectFit" bindtap="setCollection"></image>
+    <image src="{{baseImg}}detail/collection_selected.png" wx:if="{{auctionHouse.isCol == 'Y'}}" class="collection" mode="aspectFit" bindtap="cancelCollection"></image>
+  </view>
+  <view class="all-auction-house">
+    <view>
+      <navigator wx:for="{{_leftList}}" wx:key="{{item.id}}" hover-class="none" url="/pages/detail/detail?id={{item.id}}&shareCode={{shareCode}}" class="left-list">
+        <view class="list-pic">
+          <image src="{{item.thumbnailUrl}}" mode="widthFix"></image>
+        </view>
+        <view class="warp auction-name">Lot{{item.lotNum}}:{{item.auctionName}}</view>
+        <view class="start-time-str">{{item.startTimeStr}}</view>
+        <view class="start-price">{{item.priceUnit}}{{item.startPrice}}<text style="font-size: 12px">起拍</text></view>
+      </navigator>
+    </view>
+    <view>
+      <navigator wx:for="{{_rightList}}" wx:key="{{item.id}}" hover-class="none" url="/pages/detail/detail?id={{item.id}}&shareCode={{shareCode}}" class="right-list">
+        <view class="list-pic">
+          <image src="{{item.thumbnailUrl}}" mode="widthFix"></image>
+        </view>
+        <view class="warp auction-name">Lot{{item.lotNum}}:{{item.auctionName}}</view>
+        <view class="start-time-str">{{item.startTimeStr}}</view>
+        <view class="start-price">{{item.priceUnit}}{{item.startPrice}}<text style="font-size: 12px">起拍</text></view>
+      </navigator>
+    </view>
+  </view>
+  <pull-up-loading wx:if="{{loading}}"></pull-up-loading>
+  <load-all wx:if="{{pageNum >= 2 && hidden && _leftList.length +_rightList.length >= totalCount}}"></load-all>
+</view>

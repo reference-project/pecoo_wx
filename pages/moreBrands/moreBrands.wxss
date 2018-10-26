@@ -1,0 +1,14 @@
+/* pages/moreBrands/morebrands.wxss */
+.item-brand{
+  width: 100%;
+  height: 100rpx;
+  background: #FFFFFF;
+  line-height: 100rpx;
+  font-size: 15px;
+  color: #333333;
+  font-family: 'PingFang-SC-Regular';
+  padding-left: 30rpx;
+}
+.cur-brand{
+  background: #F4F4F4;
+}

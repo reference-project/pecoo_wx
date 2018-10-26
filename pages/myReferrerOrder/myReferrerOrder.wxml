@@ -1,0 +1,23 @@
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+</loading>
+<view class="share-order" wx:for="{{recommendOrder}}" wx:key="{{item.id}}">
+  <view class="contact">
+    <text>联系方式:    {{item.mobile}}                {{item.realName ||''}}</text>
+    <text>{{item.orderStateMc}}</text>
+  </view>
+  <navigator class="order-detail" url="/pages/myReferrerOrderDetail/myReferrerOrderDetail?id={{item.id}}" hover-class="none">
+    <view class="pic-box">
+      <image src="{{item.thumbnailUrl || baseImg + 'common/default_medium.png'}}"></image>
+    </view>
+    <view class="content">
+      <view class="order-name line">Lot{{item.lotNum}}:{{item.goodsName}}</view>
+      <view class="public">
+        货款总价:  <text class="money">¥{{item.goodsAmountRmb}}</text>(券： -{{item.voucherMoney}})
+      </view>
+      <view class="public">
+        付款日期:  {{item.createTime}}
+      </view>
+    </view>
+  </navigator>
+</view>
